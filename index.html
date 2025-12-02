@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Homepage</title>
+
+<style>
+    /* GLOBAL */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Poppins", Arial, sans-serif;
+        background: #f7f7f7;
+        color: #222;
+        overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav {
+        width: 100%;
+        padding: 18px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #111;
+        color: #fff;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    nav .logo {
+        font-size: 22px;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    nav ul {
+        display: flex;
+        gap: 25px;
+    }
+
+    nav ul li {
+        list-style: none;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        transition: 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #00adee;
+    }
+
+    /* HERO */
+    header {
+        height: 75vh;
+        background: linear-gradient(to right, #005C97, #363795);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        padding: 20px;
+        margin-top: 70px;
+    }
+
+    header h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    header p {
+        font-size: 18px;
+        max-width: 600px;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    /* SECTION */
+    section {
+        width: 80%;
+        margin: 50px auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.8s ease;
+    }
+
+    section h2 {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #111;
+        color: #fff;
+        margin-top: 50px;
+    }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">MyCompany</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#careers">Careers</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<header id="home">
+    <div>
+        <h1>Welcome to Our Company</h1>
+        <p>We deliver modern, high-quality digital solutions for businesses worldwide.</p>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        We are a passionate team of developers, designers, and innovators dedicated to 
+        building world-class solutions.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <p>
+        ✓ Web Development <br>
+        ✓ Mobile Applications <br>
+        ✓ Cloud Solutions <br>
+        ✓ IT Consultancy
+    </p>
+</section>
+
+<!-- CAREERS -->
+<section id="careers">
+    <h2>Careers</h2>
+    <p>
+        Join our growing team and be part of a culture that values innovation and creativity.
+    </p>
+</section>
+<!-- LEADSHOT-STYLE SECTION -->
+<section id="leadshot" style="width:80%;margin:50px auto;padding:40px;background:#fff;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.08);opacity:0;transform:translateY(40px);transition:0.8s ease;text-align:center;">
+  <h2>Subscribe to Our Newsletter</h2>
+  <p>Get updates, offers, and news directly to your inbox.</p>
+  <form id="leadshotForm" style="margin-top:20px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+    <input type="email" id="leadEmail" placeholder="Enter your email" required style="padding:10px 14px;border-radius:8px;border:1px solid #ccc;flex:1;min-width:200px;font-size:16px;">
+    <button type="submit" style="padding:10px 20px;border:none;border-radius:8px;background:#005C97;color:#fff;font-weight:600;cursor:pointer;transition:0.3s;">Subscribe</button>
+  </form>
+  <p id="leadshotMessage" style="margin-top:15px;color:green;font-weight:500;"></p>
+</section>
+
+<footer>
+    &copy; 2025 MyCompany. All rights reserved.
+</footer>
+
+<!-- JAVASCRIPT ANIMATIONS -->
+<!-- TinyChat AI Widget -->
+<script data-id="cmioss1ip0005l104ue5jzvzh" src="https://tinychat.ai/tinychat.js" async defer></script>
+<script>
+    // NAV ANIMATION
+    window.onload = () => {
+        document.querySelector(".logo").style.opacity = "1";
+        document.querySelector(".logo").style.transform = "translateY(0)";
+
+        document.querySelectorAll("nav ul li").forEach((item, i) => {
+            setTimeout(() => {
+                item.style.opacity = "1";
+                item.style.transform = "translateY(0)";
+            }, i * 150);
+        });
+
+        // HERO TEXT ANIMATION
+        setTimeout(() => {
+            document.querySelector("header h1").style.opacity = "1";
+            document.querySelector("header h1").style.transform = "translateY(0)";
+        }, 600);
+
+        setTimeout(() => {
+            document.querySelector("header p").style.opacity = "1";
+            document.querySelector("header p").style.transform = "translateY(0)";
+        }, 800);
+    };
+
+    // SECTION SCROLL ANIMATION
+    const sections = document.querySelectorAll("section");
+
+    const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.8;
+
+        sections.forEach(sec => {
+            const rect = sec.getBoundingClientRect().top;
+            if (rect < triggerBottom) {
+                sec.style.opacity = "1";
+                sec.style.transform = "translateY(0)";
+            }
+        });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+
+      // SCROLL ANIMATION
+  const leadSection = document.getElementById('leadshot');
+  const revealLead = () => {
+    const triggerBottom = window.innerHeight * 0.8;
+    const rect = leadSection.getBoundingClientRect().top;
+    if(rect < triggerBottom){
+      leadSection.style.opacity = "1";
+      leadSection.style.transform = "translateY(0)";
+    }
+  }
+  window.addEventListener('scroll', revealLead);
+  revealLead();
+
+  // FORM SUBMISSION
+  document.getElementById('leadshotForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('leadEmail').value;
+    if(email){
+      document.getElementById('leadshotMessage').innerText = `Thanks! Your email (${email}) has been submitted.`;
+      document.getElementById('leadEmail').value = '';
+      // TODO: Integrate with LeadShot API or your server here
+    }
+  });
+</script>
+
+</body>
+</html>
